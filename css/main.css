@@ -1,0 +1,1120 @@
+    /*
+     * What follows is the result of much research on cross-browser styling.
+     * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+     * Kroc Camen, and the H5BP dev community and team.
+     */
+    /* ==========================================================================
+       Base styles: opinionated defaults
+       ========================================================================== */
+    
+    @import url(../bower_components/font-awesome/css/font-awesome.css);
+    @font-face {
+        font-family: defaultfont;
+        src: url(../fonts/roboto/Roboto-Light.ttf);
+    }
+    
+    @font-face {
+        font-family: heading;
+        src: url(../fonts/roboto/Roboto-Regular.ttf);
+    }
+    /*@font-face {
+        font-family: defaultfont;
+        src: url(../fonts/Segoe_UI_Light/Segoe_UI_Light.ttf);
+    }
+
+    @font-face {
+        font-family: heading;
+        src: url(../fonts/Segoe_UI_Semibold/Segoe_UI_Semibold.ttf);
+    }
+    */
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    html {
+        color: #222;
+        font-size: 1em;
+        line-height: 1.4;
+    }
+    
+    html,
+    body {
+        font-family: defaultfont;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+        font-weight: normal;
+    }
+    /*
+     * Remove text-shadow in selection highlight:
+     * https://twitter.com/miketaylr/status/12228805301
+     *
+     * These selection rule sets have to be separate.
+     * Customize the background color to match your design.
+     */
+    
+    ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
+    /*
+     * A better looking default horizontal rule
+     */
+    
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+    /*
+     * Remove the gap between audio, canvas, iframes,
+     * images, videos and the bottom of their containers:
+     * https://github.com/h5bp/html5-boilerplate/issues/440
+     */
+    
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+        vertical-align: middle;
+    }
+    /*
+     * Remove default fieldset styles.
+     */
+    
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    /*
+     * Allow only vertical resizing of textareas.
+     */
+    
+    textarea {
+        resize: vertical;
+    }
+    /* ==========================================================================
+       Browser Upgrade Prompt
+       ========================================================================== */
+    
+    .browserupgrade {
+        margin: 0.2em 0;
+        background: #ccc;
+        color: #000;
+        padding: 0.2em 0;
+    }
+    /* ==========================================================================
+       Author's custom styles
+       ========================================================================== */
+    /* ==========================================================================
+       Helper classes
+       ========================================================================== */
+    /*
+     * Hide visually and from screen readers
+     */
+    
+    .hidden {
+        display: none !important;
+    }
+    /*
+     * Hide only visually, but have it available for screen readers:
+     * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+     */
+    
+    .visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    /*
+     * Extends the .visuallyhidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */
+    
+    .visuallyhidden.focusable:active,
+    .visuallyhidden.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+    /*
+     * Hide visually and from screen readers, but maintain layout
+     */
+    
+    .invisible {
+        visibility: hidden;
+    }
+    /*
+     * Clearfix: contain floats
+     *
+     * For modern browsers
+     * 1. The space content is one way to avoid an Opera bug when the
+     *    `contenteditable` attribute is included anywhere else in the document.
+     *    Otherwise it causes space to appear at the top and bottom of elements
+     *    that receive the `clearfix` class.
+     * 2. The use of `table` rather than `block` is only necessary if using
+     *    `:before` to contain the top-margins of child elements.
+     */
+    
+    .clearfix:before,
+    .clearfix:after {
+        content: " ";
+        /* 1 */
+        display: table;
+        /* 2 */
+    }
+    
+    .clearfix:after {
+        clear: both;
+    }
+    /* ==========================================================================
+       EXAMPLE Media Queries for Responsive Design.
+       These examples override the primary ('mobile first') styles.
+       Modify as content requires.
+       ========================================================================== */
+    
+    @media only screen and (min-width: 35em) {
+        /* Style adjustments for viewports that meet the condition */
+    }
+    
+    @media print,
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+        /* Style adjustments for high resolution devices */
+    }
+    /* ==========================================================================
+       Print styles.
+       Inlined to avoid the additional HTTP request:
+       http://www.phpied.com/delay-loading-your-print-css/
+       ========================================================================== */
+    
+    @media print {
+        *,
+        *:before,
+        *:after,
+        *:first-letter,
+        *:first-line {
+            background: transparent !important;
+            color: #000 !important;
+            /* Black prints faster:
+                                       http://www.sanbeiji.com/archives/953 */
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+        a,
+        a:visited {
+            text-decoration: underline;
+        }
+        a[href]:after {
+            content: " (" attr(href) ")";
+        }
+        abbr[title]:after {
+            content: " (" attr(title) ")";
+        }
+        /*
+         * Don't show links that are fragment identifiers,
+         * or use the `javascript:` pseudo protocol
+         */
+        a[href^="#"]:after,
+        a[href^="javascript:"]:after {
+            content: "";
+        }
+        pre,
+        blockquote {
+            border: 1px solid #999;
+            page-break-inside: avoid;
+        }
+        /*
+         * Printing Tables:
+         * http://css-discuss.incutio.com/wiki/Printing_Tables
+         */
+        thead {
+            display: table-header-group;
+        }
+        tr,
+        img {
+            page-break-inside: avoid;
+        }
+        img {
+            max-width: 100% !important;
+        }
+        p,
+        h2,
+        h3 {
+            orphans: 3;
+            widows: 3;
+        }
+        h2,
+        h3 {
+            page-break-after: avoid;
+        }
+    }
+    
+    main.wrapper {
+        /* min-height: 100%; */
+        height: 100%;
+        width: 100%;
+    }
+    
+    .art-bg {
+        position: absolute;
+        top: -55%;
+        left: 50%;
+        z-index: -1;
+    }
+    /* Menu */
+    
+    .navigation {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(24, 177, 153, 0.98);
+        z-index: 9;
+        display: flex;
+        top: -100%;
+        -webkit-transition: all linear 200ms;
+        transition: all linear 200ms;
+    }
+    
+    nav {
+        text-align: center;
+        margin: auto;
+    }
+    
+    nav .menu {
+        /* margin: 80px auto 40px auto;*/
+        padding: 0;
+        list-style: none;
+    }
+    
+    nav .menu li {
+        margin: 30px 0;
+    }
+    
+    nav .menu li a {
+        font-size: 30px;
+        color: #fff;
+        padding: 10px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        /* font-weight: bold; */
+        letter-spacing: 5px;
+        font-family: heading;
+        -webkit-transition: all linear 200ms;
+        transition: all linear 200ms;
+        position: relative;
+    }
+    
+    nav .menu li a:before {
+        content: "";
+        width: 100%;
+        border-top: thin solid #fff;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        -webkit-transition: all linear 200ms;
+        transition: all linear 200ms;
+        opacity: 0;
+    }
+    
+    nav .menu li a:after {
+        content: "";
+        width: 100%;
+        border-top: thin solid #fff;
+        position: absolute;
+        bottom: 0;
+        right: -100%;
+        -webkit-transition: all linear 300ms;
+        transition: all linear 300ms;
+        opacity: 0;
+    }
+    
+    .menu li:nth-child(1) {
+        -webkit-animation-delay: 100ms;
+    }
+    
+    .menu li:nth-child(2) {
+        -webkit-animation-delay: 150ms;
+    }
+    
+    .menu li:nth-child(3) {
+        -webkit-animation-delay: 200ms;
+    }
+    
+    .menu li:nth-child(4) {
+        -webkit-animation-delay: 250ms;
+    }
+    
+    .social {
+        -webkit-animation-delay: 300ms;
+        -webkit-animation-duration: 100ms;
+    }
+    
+    nav .menu li a:hover {
+        letter-spacing: 15px;
+        background: #fff;
+        color: #000;
+    }
+    
+    nav .menu li a:hover:before {
+        left: 0;
+        opacity: 1;
+    }
+    
+    nav .menu li a:hover:after {
+        right: 0;
+        opacity: 1;
+    }
+    
+    .social {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .social li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    
+    .social li a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        -webkit-transition: all linear 100ms;
+        transition: all linear 100ms;
+    }
+    
+    .social li a i {
+        border-radius: 50% 8px 10px 50%;
+        height: 32px;
+        line-height: 30px;
+        width: 33px;
+        margin: 5px;
+        font-size: 40px;
+    }
+    
+    .social li a:hover i {
+        background-color: #fff;
+    }
+    
+    .social li:nth-child(1):hover a i {
+        color: #3b5998;
+    }
+    
+    .social li:nth-child(2):hover a i {
+        color: #00aced;
+    }
+    
+    .social li:nth-child(3):hover a i {
+        color: #007bb6;
+    }
+    
+    .nav-trigger {
+        top: 0;
+        z-index: 99;
+    }
+    
+    .open-nav {
+        z-index: 99 !important;
+    }
+    
+    .open-nav span {
+        z-index: 9999;
+        -webkit-transition: all linear 400ms;
+        transition: all linear 400ms;
+    }
+    
+    .open-nav span:first-child,
+    .open-nav span:last-child {
+        width: 0;
+    }
+    
+    .open-nav span:nth-child(2) {
+        transform: rotate(45deg);
+        top: 15px !important;
+        background: #fff;
+    }
+    
+    .open-nav span:nth-child(3) {
+        transform: rotate(-45deg);
+        background: #fff;
+    }
+    
+    .logo {
+        position: fixed;
+        left: 30px;
+        top: 20px;
+        width: 90px;
+    }
+    
+    .logo img {
+        max-width: 100%;
+    }
+    
+    .nav-icon {
+        width: 50px;
+        height: 30px;
+        position: fixed;
+        right: 30px;
+        top: 35px;
+        cursor: pointer;
+        z-index: 9;
+    }
+    
+    .logo {
+        z-index: 9;
+    }
+    
+    .nav-icon span {
+        width: 100%;
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: #252525;
+        -webkit-transition: all linear 100ms 200ms;
+        transition: all linear 100ms 200ms;
+    }
+    
+    .nav-icon span:nth-child(1) {
+        top: 1px;
+    }
+    
+    .nav-icon span:nth-child(2) {
+        top: 14px;
+    }
+    
+    .nav-icon span:nth-child(3) {
+        top: 14px;
+    }
+    
+    .nav-icon span:nth-child(4) {
+        bottom: 0;
+    }
+    
+    .page img {
+        z-index: -1;
+    }
+    
+    #intro .img1 {
+        position: fixed;
+        right: -200px;
+        top: 50px;
+        height: 380px;
+    }
+    
+    #intro .img2 {
+        position: fixed;
+        left: -178px;
+        top: 20%;
+    }
+    
+    #intro .page-wrapper {
+        margin: auto;
+        vertical-align: middle;
+        padding-top: 40px;
+    }
+    
+    .page {
+        padding: 8% 0 0 0;
+    }
+    
+    .page .tag {
+        display: block;
+        margin: 0;
+        font-size: 20px;
+        font-family: heading;
+    }
+    
+    .page-wrapper {
+        width: 100%;
+        /* position: absolute; */
+        padding: 0px 30px;
+        /* top: 45%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        margin: 0 auto;
+    }
+    
+    .page-wrapper .head {
+        font-size: 5em;
+        font-weight: normal;
+        color: #18b199;
+    }
+    
+    .page-wrapper .head span {
+        letter-spacing: -7px;
+        font-family: heading;
+    }
+    
+    .page-wrapper .tagline {
+        text-align: right;
+        font-size: 1.8em;
+        margin-right: 12%;
+        color: #18b199;
+    }
+    
+    .page-wrapper .intro {
+        font-size: 20px;
+        margin-top: 25px;
+        padding-left: 40px;
+        line-height: 35px;
+    }
+    
+    .page-wrapper .actn-btn {
+        display: inline-block;
+        padding: 6px 25px;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .page-wrapper .actn-btn:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        border-top: 1px solid #000;
+        top: 53%;
+        left: -100%;
+        opacity: 0;
+        -webkit-transition: all linear 100ms;
+        transition: all linear 100ms;
+    }
+    
+    .page-wrapper .actn-btn:hover {
+        color: #fff;
+        background-color: #18b199;
+    }
+    
+    .page-wrapper .actn-btn:hover:before {
+        left: 0;
+        opacity: 1;
+    }
+    /*.page-wrapper .actn-btn {
+        float: right;
+        position: relative;
+        top: 50px;
+        right: 40px;
+    }*/
+    /*.page-wrapper .actn-btn.porfolio::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        left: -18px;
+        width: 50px;
+        height: 100%;
+    }*/
+    
+    .page-wrapper .actn-btn.porfolio:hover::before {
+        left: 117px;
+        opacity: 1;
+    }
+    
+    .porfolio {}
+    
+    .preloader {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 99;
+        background: #fff;
+        display: flex;
+        top: 0;
+        left: 0;
+    }
+    
+    .preloader .loader-div {
+        margin: auto;
+    }
+    
+    .preloader {
+        -webkit-animation-delay: 1.5s;
+    }
+    
+    .loader-div {
+        -webkit-animation-delay: 1s;
+    }
+    
+    .head,
+    .tagline,
+    .intro,
+    .art-bg,
+    .prot-btn .cv-btn,
+    .tag {
+        -webkit-animation-delay: 1.5s;
+    }
+    
+    #portfolio .page-wrapper .head {
+        text-align: center;
+    }
+    
+    #portfolio .page-wrapper {
+        top: 0;
+        transform: translate(0, 0);
+        position: relative;
+        left: 0;
+        max-width: 100%;
+        overflow: auto;
+        text-align: center;
+    }
+    
+    .proj-list {
+        list-style: none;
+        margin: 40px 0 20px 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .proj-list li {
+        display: inline-block;
+        max-width: 550px;
+        position: relative;
+        margin: 0px;
+        overflow: hidden;
+        cursor: pointer;
+        /* max-height: 300px; */
+    }
+    
+    .proj-list li .prj-img {
+        width: 100%;
+    }
+    
+    .proj-list li .prj-img img {
+        max-width: 100%;
+    }
+    
+    .proj-list li:hover .proj-desc {
+        bottom: 0;
+        opacity: 1;
+    }
+    
+    .proj-list li:hover .proj-desc .proj-det {
+        -webkit-transform: translate(0, 0px);
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+    
+    .proj-desc {
+        position: absolute;
+        background: rgba(24, 177, 153, 0.8);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        bottom: -100%;
+        left: 0;
+        opacity: 0;
+        -webkit-transition: all ease-out 200ms;
+        transition: all ease-out 200ms;
+    }
+    
+    .proj-desc .proj-det {
+        margin: auto;
+        vertical-align: middle;
+        /* text-align: left; */
+        color: #FFF;
+        width: 100%;
+        padding: 10px 0;
+        background: rgba(0, 0, 0, 0.3);
+        /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); */
+        opacity: 0;
+        -webkit-transform: translate(0, 50px);
+        transform: translate(0, 50px);
+        -webkit-transition: all ease-Out 300ms 200ms;
+        transition: all ease-Out 300ms 200ms;
+    }
+    
+    .proj-desc .proj-det h3 {
+        font-size: 30px;
+        font-family: heading;
+        text-transform: uppercase;
+    }
+    
+    .proj-desc .proj-det span {
+        font-size: 16px;
+    }
+    
+    .proj-screen {
+        margin-top: 40px;
+    }
+    
+    .proj-screen img {
+        max-width: 100%;
+    }
+    
+    .prjct-details .tech {
+        display: block;
+        margin: 10px 0;
+        font-size: 22px;
+    }
+    
+    .child-section {
+        width: 100%;
+        background: #18b199;
+        overflow: hidden;
+        margin: 10px 0;
+    }
+    
+    .prjct-details {
+        text-align: center;
+    }
+    
+    .prjct-details .head {
+        text-transform: uppercase;
+    }
+    
+    .prjct-details .proj-brief {
+        margin: 30px 0;
+    }
+    
+    .prjct-details .proj-brief p {
+        line-height: 50px;
+        font-size: 25px;
+    }
+    
+    .child-section .floatpanes {
+        width: 100%;
+    }
+    
+    .typo,
+    .clr-scheme {
+        background: #137B6B;
+        min-height: 300px;
+        padding: 5px;
+        color: #fff;
+    }
+    
+    .typo-font,
+    .clr-block {
+        margin-top: 40px;
+    }
+    
+    .typo h2,
+    .clr-scheme h2 {
+        margin-top: 20px;
+    }
+    
+    .clr-block ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .clr-block ul li {
+        display: inline-block;
+        vertical-align: middle;
+        width: 80px;
+        height: 80px;
+        background: #aaa;
+        margin: 15px 10px;
+        font-size: 13px;
+        line-height: 180px;
+    }
+    
+    .typo-font h1 {
+        margin: 20px 0;
+    }
+    
+    .screens ul {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .screens ul li {
+        display: inline-block;
+        /* min-height: 200px; */
+        /* background: #eee; */
+        padding: 10px;
+        box-shadow: 1px 1px 16px -4px #ADADAD;
+        margin: 10px 0;
+    }
+    
+    .screens ul li img {
+        max-width: 100%;
+    }
+    
+    footer {
+        padding: 25px 0;
+        background: #313131;
+        color: #fff;
+        text-align: center;
+    }
+    
+    @media (min-width: 992px) {
+        .page-wrapper {
+            width: 970px;
+        }
+        .screens ul li {
+            width: 1000px;
+        }
+        .contact-wrap {
+            width: 50%;
+            margin: 50px auto;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .page-wrapper {
+            width: 1170px;
+        }
+        .screens ul li {
+            /* width: 550px; */
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+        .floats {
+            float: left;
+        }
+        .child-section .floatpanes {
+            width: 50%;
+            padding: 0 2px;
+        }
+        .skillset {
+            width: 60%;
+            padding: 10px 30px 25px 0;
+            border-right: 1px solid #EAEAEA;
+        }
+        .specialists {
+            width: 40%;
+            padding: 10px 10px 10px 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .child-section .floatpanes {
+            margin: 5px 0;
+        }
+    }
+    /* Resume */
+    
+    #resume .resume-pane {
+        padding: 20px;
+        min-height: 300px;
+        color: #fff;
+        background: #19B199;
+    }
+    
+    #resume .child-section {
+        background: none;
+    }
+    
+    #resume .info {
+        margin: 50px 0;
+        font-size: 18px;
+    }
+    
+    .resume-pane ul {
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .resume-pane ul li {
+        margin: 20px 0;
+        position: relative;
+        padding-left: 45px;
+        font-size: 18px;
+    }
+    
+    .resume-pane ul li:before {
+        font-family: FontAwesome;
+        position: absolute;
+        left: 0;
+        font-size: 25px;
+    }
+    
+    .resume-pane.education ul li:before {
+        content: "\f19d";
+    }
+    
+    .resume-pane.skills ul li:before {
+        content: "\f0b1";
+    }
+    
+    .skills ul>li>h3>span {
+        font-size: 14px;
+        float: right;
+        display: inline-block;
+        line-height: 28px;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .skillset {
+        /* padding: 10px 30px 25px 0;
+        clear: both; 
+        width: 60%;
+        float: left;
+        border-right: 1px solid #EAEAEA;*/
+    }
+    
+    .clearfix {
+        clear: both;
+        margin: 10px 0;
+    }
+    
+    .specialists {
+        /*width: 40%;
+        float: left;
+        padding: 10px 10px 10px 30px;*/
+    }
+    
+    .specialists .sp-skill {
+        min-height: 300px;
+        margin-top: 20px;
+    }
+    
+    .sp-skill ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sp-skill ul li {
+        margin: 5px 0;
+        text-transform: capitalize;
+        font-size: 20px;
+        padding: 30px;
+        background: #f5f5f5;
+        color: #545454;
+        border-bottom: thin solid #eee;
+    }
+    
+    .sp-skill ul li>i {
+        margin-right: 20px;
+        color: #19B199;
+        font-size: 33px;
+        vertical-align: middle;
+        /* opacity: 0.8; */
+    }
+    
+    .skillset .skill {
+        padding: 20px 0;
+    }
+    
+    .skillset .skill h4 {
+        padding: 5px;
+        text-transform: uppercase;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        height: 3px;
+        background: #E4E4E4;
+        position: relative;
+    }
+    
+    .progress-bar.photoshop> span {
+        left: 85%;
+    }
+    
+    .progress-bar.html> span {
+        left: 90%;
+    }
+    
+    .progress-bar.css> span {
+        left: 90%;
+    }
+    
+    .progress-bar.javascript> span {
+        left: 70%;
+    }
+    
+    .progress-bar.ajax> span {
+        left: 50%;
+    }
+    
+    .progress-bar>span {
+        display: block;
+        position: absolute;
+        top: -14px;
+        left: 90%;
+        background: #19B199;
+        padding: 5px 13px;
+        color: #fff;
+        margin: 0 -50px;
+    }
+    
+    .cv-wrap {
+        text-align: center;
+        margin: 25px 0;
+    }
+    
+    .cv-btn {
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 30px;
+        font-size: 20px;
+        color: #fff;
+        background: #19B199;
+        margin: 0 auto;
+    }
+    
+    .input-field {
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        margin: 10px 0;
+        outline: none;
+        border: 2px solid #8E8D8D;
+    }
+    
+    textarea.input-field {
+        height: 140px;
+    }
+    
+    .sub-btn {
+        border: none;
+        outline: none;
+    }
+    
+    .prot-btn > .cv-btn {
+        -webkit-transition: all linear 100ms;
+        letter-spacing: 2px;
+    }
+    
+    .prot-btn > .cv-btn {
+        text-decoration: none;
+        color: #fff;
+        margin-top: 40px;
+    }
+    
+    .prot-btn > .cv-btn:hover {
+        letter-spacing: 10px;
+    }
