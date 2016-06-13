@@ -300,6 +300,7 @@
         display: flex;
         top: -150%;
         -webkit-transition: all linear 200ms;
+        -moz-transition: all linear 200ms;
         transition: all linear 200ms;
         overflow-y: auto;
         overflow-x: hidden;
@@ -330,6 +331,7 @@
         letter-spacing: 5px;
         font-family: heading;
         -webkit-transition: all linear 200ms;
+        -moz-transition: all linear 200ms;
         transition: all linear 200ms;
         position: relative;
     }
@@ -342,6 +344,7 @@
         top: 0;
         left: -100%;
         -webkit-transition: all linear 200ms;
+        -moz-transition: all linear 200ms;
         transition: all linear 200ms;
         opacity: 0;
     }
@@ -354,29 +357,36 @@
         bottom: 0;
         right: -100%;
         -webkit-transition: all linear 300ms;
+        -moz-transition: all linear 300ms;
         transition: all linear 300ms;
         opacity: 0;
     }
     
     .menu li:nth-child(1) {
         -webkit-animation-delay: 100ms;
+        -moz-animation-delay: 100ms;
     }
     
     .menu li:nth-child(2) {
         -webkit-animation-delay: 150ms;
+        -moz-animation-delay: 150ms;
     }
     
     .menu li:nth-child(3) {
         -webkit-animation-delay: 200ms;
+        -moz-animation-delay: 200ms;
     }
     
     .menu li:nth-child(4) {
         -webkit-animation-delay: 250ms;
+        -moz-animation-delay: 250ms;
     }
     
     .social {
         -webkit-animation-delay: 300ms;
         -webkit-animation-duration: 100ms;
+        -moz-animation-delay: 300ms;
+        -moz-animation-duration: 100ms;
     }
     
     nav .menu li a:hover {
@@ -410,6 +420,7 @@
         color: #fff;
         text-decoration: none;
         -webkit-transition: all linear 100ms;
+        -moz-transition: all linear 100ms;
         transition: all linear 100ms;
     }
     
@@ -450,6 +461,7 @@
     .open-nav span {
         z-index: 9999;
         -webkit-transition: all linear 400ms;
+        -moz-transition: all linear 400ms;
         transition: all linear 400ms;
     }
     
@@ -501,6 +513,7 @@
         height: 2px;
         background: #252525;
         -webkit-transition: all linear 100ms 200ms;
+        -moz-transition: all linear 100ms 200ms;
         transition: all linear 100ms 200ms;
     }
     
@@ -609,6 +622,7 @@
         left: -100%;
         opacity: 0;
         -webkit-transition: all linear 100ms;
+        -moz-transition: all linear 100ms;
         transition: all linear 100ms;
     }
     
@@ -661,10 +675,12 @@
     
     .preloader {
         -webkit-animation-delay: 1.5s;
+        -moz-animation-delay: 1.5s;
     }
     
     .loader-div {
         -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
     }
     
     .head,
@@ -674,6 +690,7 @@
     .prot-btn .cv-btn,
     .tag {
         -webkit-animation-delay: 1.5s;
+        -moz-animation-delay: 1.5s;
     }
     
     #portfolio .page-wrapper .head {
@@ -722,6 +739,7 @@
     
     .proj-list li:hover .proj-desc .proj-det {
         -webkit-transform: translate(0, 0px);
+        -moz-transform: translate(0, 0px);
         transform: translate(0, 0px);
         opacity: 1;
     }
@@ -736,6 +754,7 @@
         left: 0;
         opacity: 0;
         -webkit-transition: all ease-out 200ms;
+        -moz-transition: all ease-out 200ms;
         transition: all ease-out 200ms;
     }
     
@@ -750,8 +769,10 @@
         /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); */
         opacity: 0;
         -webkit-transform: translate(0, 50px);
+        -moz-transform: translate(0, 50px);
         transform: translate(0, 50px);
         -webkit-transition: all ease-Out 300ms 200ms;
+        -moz-transition: all ease-Out 300ms 200ms;
         transition: all ease-Out 300ms 200ms;
     }
     
@@ -936,6 +957,7 @@
     #resume .info {
         margin: 50px 0;
         font-size: 18px;
+        line-height: 45px;
     }
     
     .resume-pane ul {
@@ -1087,6 +1109,11 @@
         margin: 0 auto;
     }
     
+    .cv-btn a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
     .input-field {
         display: block;
         width: 100%;
@@ -1108,6 +1135,8 @@
     
     .prot-btn > .cv-btn {
         -webkit-transition: all linear 100ms;
+        -moz-transition: all linear 100ms;
+        transition: all linear 100ms;
         letter-spacing: 2px;
     }
     

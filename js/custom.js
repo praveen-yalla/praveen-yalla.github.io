@@ -48,7 +48,7 @@ $(document).ready(function() {
                 data: $("#contactform").serialize()
             })
             .done(function(msg) {
-                alert(msg);
+                //alert(msg);
             });
     });
 
