@@ -40,7 +40,7 @@ $(document).ready(function() {
     $("#submitbtn").on("click", this, function() {
         var form = $("#contactform").serialize();
 
-        alert(form);
+        //alert(form);
 
         $.ajax({
                 method: "GET",
