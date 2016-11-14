@@ -824,6 +824,18 @@
         font-size: 25px;
     }
     
+    .prjct-details .proj-brief a {
+        background: #da1f64;
+        padding: 0 25px;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .prjct-details .proj-brief a:hover {
+        text-decoration: underline;
+    }
+    
     .child-section .floatpanes {
         width: 100%;
     }
@@ -1075,12 +1087,20 @@
         left: 90%;
     }
     
+    .progress-bar.bootstrap> span {
+        left: 70%;
+    }
+    
+    .progress-bar.angular> span {
+        left: 40%;
+    }
+    
     .progress-bar.javascript> span {
         left: 70%;
     }
     
     .progress-bar.ajax> span {
-        left: 50%;
+        left: 60%;
     }
     
     .progress-bar>span {
