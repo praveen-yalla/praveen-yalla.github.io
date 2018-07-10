@@ -1088,20 +1088,25 @@
     }
     
     .progress-bar.bootstrap> span {
-        left: 70%;
+        left: 85%;
     }
     
     .progress-bar.angular> span {
-        left: 40%;
+        left: 50%;
     }
     
     .progress-bar.javascript> span {
-        left: 70%;
+        left: 90%;
     }
     
     .progress-bar.ajax> span {
-        left: 60%;
+        left: 70%;
     }
+    
+.progress-bar.angularjs> span {
+        left: 80%;
+    }
+
     
     .progress-bar>span {
         display: block;
